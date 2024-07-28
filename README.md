@@ -1,1 +1,0 @@
-# paint-github-ba6e4
