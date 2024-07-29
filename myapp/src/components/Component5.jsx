@@ -1,12 +1,14 @@
 import { useContext } from "react";
-import { dataContext } from "../App";
+import { infoContext } from "../App";
+
 const Component5 = () => {
-const {userName} = useContext(dataContext);
+    const obj = useContext(infoContext)
+
 
     return (
         <>
             <h3>I'm Component 5</h3>
-            <h1>my name is {userName} </h1>
+            <h1>I had received the following info - {obj.email} and {obj.username} </h1>
         </>
     )
 }

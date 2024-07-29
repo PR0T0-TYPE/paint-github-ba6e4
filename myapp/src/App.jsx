@@ -1,21 +1,23 @@
 import { createContext } from "react";
-import Component1 from "./components/Component1";
+import Component1 from './components/Component1'
 
-// context hook example
-export const dataContext = createContext();
+export const infoContext = createContext();
 
-const App = () =>{
+const App = () => {
+  let obj = {
+    username: 'Joanna',
+    email: 'silva@gmail.com'
+  }
 
-  let userName = 'John';
-  let email = 'johndoe@gmail.com'
+  // shft + alt + f
+  return (
+    <>
+      <infoContext.Provider value={obj}>
+        I'have info like , {obj.username} & {obj.email}
+        <Component1 />
+      </infoContext.Provider>
 
-  return(
-<dataContext.Provider value={{userName, email}} >
- <h1>Hey I'm App.jsx Component.</h1>
-  <Component1 />
-</dataContext.Provider>
-
-  );
+    </>
+  )
 }
-
 export default App;
